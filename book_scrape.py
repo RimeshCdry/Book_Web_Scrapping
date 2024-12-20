@@ -2,6 +2,24 @@ import requests
 from bs4 import BeautifulSoup
 import sqlite3
 
+# install git
+# create repository in github
+
+# go to gut bash
+# git config --global user.name "Rimesh Chaudhary"
+# git config --global user.email "rimeshcdry45@gmail.com"
+
+# git init
+# git status
+# git diff
+# git add .
+# git commit -m "Your message"
+# copy paste git code from github
+
+# 1. git add .
+# 2. git commit -m "Your message"
+# 3. git push origin
+
 
 def create_database():
     conn = sqlite3.connect("books.sqlite3")
@@ -28,6 +46,8 @@ def insert_book(title,currency, price):
 
 
 URL = "https://books.toscrape.com/"
+
+page_no = 1
 
 def scrape_book(url):
     response = requests.get(url)
@@ -61,5 +81,6 @@ def delete_table():
         conn.close()
         
 # delete_table()        
-create_database()    
+create_database() 
+   
 scrape_book(URL)
